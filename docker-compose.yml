@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: realtime-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: realtime
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    container_name: realtime-redis
+    restart: always
+    ports:
+      - "6379:6379"
